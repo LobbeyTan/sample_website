@@ -181,6 +181,15 @@
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
+      <script>
+        function viewService(service_name) {
+          console.log("Viewing", service_name)
+          analytics.track('Service Interested', {
+            service: service_name
+          })
+        }
+      </script>
+
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -189,7 +198,8 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100"
+            onmouseleave="viewService('Lorem Ipsum')">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">Lorem Ipsum</a></h4>
@@ -198,7 +208,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200"
+            onmouseleave="viewService('Sed ut perspiciatis')">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
@@ -207,7 +218,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300"
+            onmouseleave="viewService('Magni Dolores')">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="">Magni Dolores</a></h4>
@@ -216,7 +228,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400"
+            onmouseleave="viewService('Nemo Enim')">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4 class="title"><a href="">Nemo Enim</a></h4>
