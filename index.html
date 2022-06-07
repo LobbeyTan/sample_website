@@ -30,21 +30,11 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MLW039CWC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-4MLW039CWC');
-  </script>
-
   <script>
     !function () {
       var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
-        analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { var t = Array.prototype.slice.call(arguments); t.unshift(e); analytics.push(t); return analytics } }; for (var e = 0; e < analytics.methods.length; e++) { var key = analytics.methods[e]; analytics[key] = analytics.factory(key) } analytics.load = function (key, e) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = e }; analytics._writeKey = "IPbKkHGQeQivBXVWapv5cuVHBuXLipjP";; analytics.SNIPPET_VERSION = "4.15.3";
-        analytics.load("IPbKkHGQeQivBXVWapv5cuVHBuXLipjP");
+        analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { var t = Array.prototype.slice.call(arguments); t.unshift(e); analytics.push(t); return analytics } }; for (var e = 0; e < analytics.methods.length; e++) { var key = analytics.methods[e]; analytics[key] = analytics.factory(key) } analytics.load = function (key, e) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = e }; analytics._writeKey = "qJWRyazSx0EffWWuxLEL7jQpzYAZ2viF";; analytics.SNIPPET_VERSION = "4.15.3";
+        analytics.load("qJWRyazSx0EffWWuxLEL7jQpzYAZ2viF");
         analytics.page();
       }
     }();
@@ -62,6 +52,36 @@
 </head>
 
 <body>
+  <script>
+    // Login user:
+    var val = Math.floor(Math.random() * 5)
+
+    switch (val) {
+      case 1: analytics.identify("1ecdbd58-e665", {
+        name: "Chee Lam",
+        email: "cheelam@websight.com",
+        plan: "premium",
+      });
+        break;
+      case 2: analytics.identify("24b8a354-e665", {
+        name: "Alvin Chuah",
+        email: "alvin@websight.com",
+        plan: "basic",
+      });
+      case 3: analytics.identify("290b1946-e665", {
+        name: "Muhammad Onn",
+        email: "muhammadonn1299@websight.com",
+        plan: "premium",
+      });
+      case 4: analytics.identify("2f8b860c-e665", {
+        name: "Siva",
+        email: "siva@websight.com",
+        plan: "premium",
+      });
+    }
+
+
+  </script>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -219,6 +239,7 @@
             product: prod
           })
         }
+
         function clickProduct(prod) {
           analytics.track('Product Clicked', {
             product: prod
@@ -400,6 +421,17 @@
 
     <!-- ======= F.A.Q Section ======= -->
     <section id="faq" class="faq section-bg">
+      <script>
+        function viewQnA(no, ques, ans) {
+          console.log("Reading", ques)
+          analytics.track('QnA Read', {
+            no: no,
+            question: ques,
+            answer: ans,
+          })
+        }
+      </script>
+
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -410,7 +442,9 @@
         <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
 
           <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1"
+              onclick="viewQnA(1, 'Non consectetur a erat nam at lectusurna duis?', 'Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabiturgravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.')">
+              Non consectetur a erat nam at lectus
               urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq1" class="collapse" data-bs-parent=".faq-list">
               <p>
@@ -421,7 +455,9 @@
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius morbi enim
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question"
+              onclick="viewQnA(2, 'Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?', 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet iddonec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.')">
+              >Feugiat scelerisque varius morbi enim
               nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i
                 class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq2" class="collapse" data-bs-parent=".faq-list">
@@ -434,7 +470,9 @@
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question"
+              onclick="viewQnA(3, 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?', 'Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis')">
+              >Dolor sit amet consectetur adipiscing
               elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i
                 class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq3" class="collapse" data-bs-parent=".faq-list">
@@ -447,7 +485,9 @@
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question"
+              onclick="viewQnA(4, 'Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?', 'Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.')">
+              >Ac odio tempor orci dapibus. Aliquam
               eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i
                 class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq4" class="collapse" data-bs-parent=".faq-list">
@@ -460,7 +500,9 @@
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question"
+              onclick="viewQnA(5, 'Tempus quam pellentesque nec nam aliquam sem et tortor consequat?', 'Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in')">
+              >Tempus quam pellentesque nec nam
               aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i
                 class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq5" class="collapse" data-bs-parent=".faq-list">
@@ -473,7 +515,9 @@
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare.
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question"
+              onclick="viewQnA(6, 'Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?', 'Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.')">
+              >Tortor vitae purus faucibus ornare.
               Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i
                 class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq6" class="collapse" data-bs-parent=".faq-list">
