@@ -43,7 +43,7 @@ function getRandomValues(n) {
 }
 
 for (let i = 0; i < nameList.length; i++) {
-    var isPresent = Math.random() > 0.5
+    // var isPresent = Math.random() > 0.5
     analytics.page();
     if (isPresent) {
         analytics.identify(uuids[i], {
