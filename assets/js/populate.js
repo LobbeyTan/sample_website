@@ -45,18 +45,18 @@ function getRandomValues(n) {
 for (let i = 0; i < nameList.length; i++) {
     // var isPresent = Math.random() > 0.5
     analytics.page();
-    if (isPresent) {
-        analytics.identify(uuids[i], {
-            name: nameList[i],
-            email: nameList[i].toLowerCase().split(" ").join("") + "@gmail.com",
-            plan: (Math.random() > 0.5) ? "Premium" : "Freemium",
-        })
+    // if (isPresent) {
+    analytics.identify(uuids[i], {
+        name: nameList[i],
+        email: nameList[i].toLowerCase().split(" ").join("") + "@gmail.com",
+        plan: (Math.random() > 0.5) ? "Premium" : "Freemium",
+    })
 
-        viewService(services[getRandomValues(services.length)]);
+    viewService(services[getRandomValues(services.length)]);
 
-        viewProduct(products[getRandomValues(products.length)]);
+    viewProduct(products[getRandomValues(products.length)]);
 
-        clickProduct(products[getRandomValues(products.length)]);
+    clickProduct(products[getRandomValues(products.length)]);
 
-    }
+    // }
 }
